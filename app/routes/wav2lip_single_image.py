@@ -4,7 +4,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from app.engines.wav2lip_single_image.engine import Wav2LipSingleImageEngine
 
 router = APIRouter()
-engine = Wav2LipSingleImageEngine(model_path="/workspace/Wav2Lip", workspace="/workspace")
+engine = Wav2LipSingleImageEngine(model_path="Wav2Lip", workspace=".")
 
 @router.post("/sync/single_image")
 async def sync_single_image(image: UploadFile = File(...), audio: UploadFile = File(...)):
