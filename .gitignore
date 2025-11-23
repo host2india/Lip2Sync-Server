@@ -1,3 +1,4 @@
-models/*
+
 !models/*/README.md
 uploads/*
+models_backup/
