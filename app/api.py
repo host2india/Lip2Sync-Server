@@ -48,3 +48,7 @@ async def api_sadtalker(source: UploadFile = File(...), audio: UploadFile = File
         return FileResponse(output, media_type="video/mp4", filename=Path(output).name)
     except Exception as e:
         return JSONResponse({"error": str(e)}, status_code=500)
+
+# Register SadTalker Single Image Endpoint
+from app.routes.sadtalker_single import router as sadtalker_single_router
+app.include_router(sadtalker_single_router)
